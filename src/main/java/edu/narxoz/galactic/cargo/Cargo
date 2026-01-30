@@ -3,6 +3,9 @@ public class Cargo {
     private String description;
 
     public Cargo(double weightKg, String description) {
+        if (weightKg <= 0) {
+            throw new IllegalArgumentException("Weight is incorrect");
+        }
         this.weightKg = weightKg;
         this.description = description;
     }
@@ -14,6 +17,4 @@ public class Cargo {
     public String getDescription() {
         return description;
     }
-
-    
 }
